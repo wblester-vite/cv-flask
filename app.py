@@ -5,15 +5,15 @@ import plotly.express as px
 import pandas as pd
 
 # Crear la aplicación Flask
-server = Flask(__name__)
+app = Flask(__name__)  # Cambié 'server' a 'app' para que Gunicorn lo reconozca
 
 # Ruta principal de Flask (tu CV)
-@server.route('/')
+@app.route('/')
 def cv():
     return render_template('cv.html')
 
 # Crear la aplicación Dash dentro de Flask
-app = Dash(__name__, server=server, url_base_pathname='/dashboard/')
+dash_app = Dash(__name__, server=app, url_base_pathname='/dashboard/')
 
 # Datos de ejemplo: Habilidades técnicas y nivel de competencia
 df = pd.DataFrame({
@@ -22,7 +22,7 @@ df = pd.DataFrame({
 })
 
 # Layout del dashboard
-app.layout = html.Div(children=[
+dash_app.layout = html.Div(children=[
     html.H1(children='Mis Habilidades Técnicas'),
 
     # Gráfico de barras: Habilidades y nivel de competencia
@@ -44,7 +44,7 @@ app.layout = html.Div(children=[
 ])
 
 # Callback para actualizar el gráfico de pastel
-@app.callback(
+@dash_app.callback(
     Output('nivel-pie-chart', 'figure'),
     [Input('habilidad-dropdown', 'value')]
 )
@@ -53,6 +53,4 @@ def update_pie_chart(selected_habilidad):
     fig = px.pie(filtered_df, values='Nivel', names='Habilidad', title=f'Nivel de Competencia en {selected_habilidad}')
     return fig
 
-# Ejecutar la aplicación Flask
-if __name__ == '__main__':
-    server.run(debug=True)
+# No es necesario el bloque `if __name__ == '__main__':` para Flask cuando usas Gunicorn
