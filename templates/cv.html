@@ -4,17 +4,55 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CV de Wblester Aguirre</title>
+    <!-- Enlazar Bootstrap desde CDN -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
-    <header>
-        <h1>WBLESTER AGUIRRE</h1>
-        <p>ACTUARIO</p>
-        <p>Calle Colina de jades 41, Boulevares, Naucalpan</p>
-        <p>56-4600-2096 | wblester.vite@icloud.com</p>
+    <!-- Barra de navegación fija -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <a class="navbar-brand" href="#">Mi CV</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#experiencia">Experiencia</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#proyectos">Proyectos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#habilidades">Habilidades</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#educacion">Educación</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#certificaciones">Certificaciones</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Sección de Header -->
+    <header class="container mt-5 pt-5">
+        <div class="row">
+            <div class="col-md-6">
+                <h1>WBLESTER AGUIRRE</h1>
+                <p><strong>ACTUARIO</strong></p>
+                <p>Calle Colina de Jades 41, Boulevares, Naucalpan</p>
+                <p>56-4600-2096 | wblester.vite@icloud.com</p>
+            </div>
+            <div class="col-md-6">
+                <img src="https://via.placeholder.com/400x400" class="img-fluid rounded-circle" alt="Foto de perfil">
+            </div>
+        </div>
     </header>
 
-    <section>
+    <!-- Experiencia Laboral -->
+    <section id="experiencia" class="container mt-5">
         <h2>Experiencia Laboral</h2>
         <h3>2017 – Actualmente</h3>
         <h4>ZURICH SEGUROS | Ejecutivo bilingüe</h4>
@@ -24,7 +62,8 @@
         </ul>
     </section>
 
-    <section>
+    <!-- Proyectos -->
+    <section id="proyectos" class="container mt-5">
         <h2>Proyectos</h2>
         <h3>Proyecto de Integración de Bases de Datos</h3>
         <p>Diseño y desarrollo de consultas complejas para el cruce de datos y presentación de informes detallados.</p>
@@ -34,7 +73,8 @@
         <p>Uso de Python y sus librerías (NumPy y Pandas) para la recolección y limpieza de datos.</p>
     </section>
 
-    <section>
+    <!-- Habilidades Técnicas -->
+    <section id="habilidades" class="container mt-5">
         <h2>Habilidades Técnicas</h2>
         <ul>
             <li>PYTHON INTERMEDIO: Análisis exploratorio univariado, bivariado y multivariado</li>
@@ -42,13 +82,13 @@
             <li>BI Básico: Manejo de herramientas de Business Intelligence para la visualización y análisis de datos.</li>
             <li>Inglés B2: Comunicación efectiva en contextos profesionales y técnicos.</li>
         </ul>
-        <!-- Enlace al dashboard interactivo -->
         <p>
-            <a href="/dashboard/" target="_blank">Ver Mis Habilidades Técnicas (Dashboard Interactivo)</a>
+            <a href="/dashboard/" class="btn btn-primary" target="_blank">Ver Mis Habilidades Técnicas (Dashboard Interactivo)</a>
         </p>
     </section>
 
-    <section>
+    <!-- Educación -->
+    <section id="educacion" class="container mt-5">
         <h2>Educación</h2>
         <h3>UNAM – FES ACATLAN</h3>
         <p>ACTUARIA | 2021–2025</p>
@@ -56,21 +96,21 @@
         <p>Ingeniería Industrial (Trunca) | 2013–2017</p>
     </section>
 
-    <section>
-        <h2>Competencias</h2>
-        <ul>
-            <li>Trabajo en equipo</li>
-            <li>Comunicación efectiva</li>
-            <li>Probabilidad y estadística</li>
-            <li>Base de datos</li>
-        </ul>
-    </section>
-
-    <section>
+    <!-- Certificaciones -->
+    <section id="certificaciones" class="container mt-5">
         <h2>Certificaciones y Cursos en Platzi</h2>
         <h3>Curso Profesional de Machine Learning con Scikit-learn</h3>
         <p>Aprendizaje en la implementación de algoritmos de aprendizaje supervisado y no supervisado, como regresión logística, árboles de decisión y clustering.</p>
     </section>
 
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-3">
+        <p>&copy; 2025 Wblester Aguirre. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- Incluir Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>

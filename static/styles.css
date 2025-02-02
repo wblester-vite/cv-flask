@@ -1,37 +1,28 @@
+/* Estilos generales */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     line-height: 1.6;
-    margin: 20px;
+    margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color: #f8f9fa;
+}
+
+h1, h2, h3, h4 {
+    font-weight: bold;
 }
 
 header {
     text-align: center;
-    margin-bottom: 20px;
+    margin-top: 100px; /* Para hacer espacio para la barra de navegación */
 }
 
 h1 {
     font-size: 2.5em;
-    margin-bottom: 10px;
+    color: #2c3e50;
 }
 
-h2 {
-    font-size: 1.8em;
-    margin-top: 20px;
-    margin-bottom: 10px;
-}
-
-h3 {
-    font-size: 1.4em;
-    margin-top: 15px;
-    margin-bottom: 5px;
-}
-
-h4 {
-    font-size: 1.2em;
-    margin-top: 10px;
-    margin-bottom: 5px;
+h2, h3 {
+    color: #34495e;
 }
 
 ul {
@@ -39,6 +30,34 @@ ul {
     margin-left: 20px;
 }
 
-p {
-    margin-bottom: 10px;
+footer {
+    background-color: #343a40;
+    color: white;
+    padding: 20px;
+}
+
+/* Mejora del layout */
+.container {
+    max-width: 1200px;
+}
+
+/* Estilos para imagen de perfil */
+img {
+    max-width: 100%;
+    border-radius: 50%;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .navbar-brand {
+        font-size: 1.5em;
+    }
+
+    header h1 {
+        font-size: 2em;
+    }
+
+    .container {
+        padding: 0 15px;
+    }
 }
